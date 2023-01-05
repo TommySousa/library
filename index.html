@@ -23,8 +23,34 @@
             </div>
         </div>
         <div class="main-content">
-
+            
+        </div>
+        <div class="footer">
+            <button class="add" onclick= "displayForm()">
+                Add Book
+            </button>
         </div>
     </div>
+    <section class="add-book">
+        <div class="book-form">
+            <label for="title">Insert the book title</label>
+            <input type="text" name="title" id="title" required>
+            <label for="author">Insert the book's author</label>
+            <input type="text" name="author" id="title" required>
+            <label for="number">Number of pages</label>
+            <input type="number" name="number" id="number" required>
+            <label for="read">Have you read the book?</label>
+            <select name="read" id="read">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="mid">Currently Reading</option>
+            </select>
+            <div class="book-button">
+                <button id="add">Add</button>
+                <button id="back">Go back</button>
+            </div>
+        </div>
+        </div>
+    </section>
 </body>
 </html>

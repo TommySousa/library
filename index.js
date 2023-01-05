@@ -31,6 +31,16 @@ const showBooks = (library) => {
         `  
     mainContent.appendChild(element)
     });
+};
+
+const displayForm = () => {
+    const formSection = document.querySelector('.add-book');
+    if(formSection.style.display === ''){
+        formSection.style.display = 'block'
+    } else if (formSection.style.display === 'block'){
+        formSection.style.display = ''
+    }
+    
 }
 
-window.onload(showBooks(myLibrary))
+window.onload = (showBooks(myLibrary));
