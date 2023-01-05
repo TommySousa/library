@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main-content{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.book-card{
+    height: 450px;
+    width: 300px;
+    border: 2px solid yellow;
+}
