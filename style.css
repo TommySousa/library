@@ -1,21 +1,28 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .main-content{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 2rem;
+    gap: 2rem;
 
 }
 
 .book-card{
     height: 450px;
     width: 300px;
+    min-width: 100px;
     border: 2px solid yellow;
 }
 
 .add-book{
     display: none;
 }
+
 
 
