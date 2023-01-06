@@ -17,9 +17,9 @@
             <div class="header-options">
                 <ul class="options">
                     <li>New</li>
-                    <li>Delete</li>
                     <li>Restart</li>
                 </ul>
+                
             </div>
         </div>
         <div class="main-content">
@@ -32,7 +32,7 @@
         </div>
     </div>
     <section class="add-book">
-        <div class="book-form">
+        <form class="book-form" id="form" >
             <label for="title">Insert the book title</label>
             <input type="text" name="title" id="title" required>
             <label for="author">Insert the book's author</label>
@@ -46,11 +46,11 @@
                 <option value="mid">Currently Reading</option>
             </select>
             <div class="book-button">
-                <button id="add">Add</button>
-                <button id="back">Go back</button>
+                <input  type="submit" id="add" value= "Add" form="form">
+                <button id="back" form="" onclick="displayForm()">Go back</button>
             </div>
-        </div>
-        </div>
+        </form>  
+      
     </section>
 </body>
 </html>
