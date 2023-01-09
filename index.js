@@ -41,6 +41,8 @@ const showBooks = (library) => {
                 `  
     mainContent.appendChild(element)
     });
+    markRead();
+    unRead();
 };
 
 const form = document.getElementById('form')
@@ -51,9 +53,6 @@ form.addEventListener('submit', (e) => {
     let book = new Book (e.target[0].value,e.target[1].value,e.target[2].value,e.target[3].value);
     addBook(book);
     showBooks(myLibrary);
-    markRead();
-    unRead();
-    trash();
     formSection.style.display = '';
 });
 
@@ -105,5 +104,4 @@ const displayForm = () => {
 
 
 window.onload = (showBooks(myLibrary));
-window.onload = (markRead());
-window.onload = (unRead());
+
