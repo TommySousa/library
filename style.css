@@ -3,6 +3,35 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --title: 2rem;
+    --header: #F5EBE0;
+    --mainContent: #FEFCF3;
+    --cardColor: #F0DBDB;
+    --titleFont:'MedievalSharp', cursive;
+    --cardFont: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+li{
+    display: inline;
+}
+
+.header{
+    display: flex;
+    background-color: var(--header);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 8vh;
+    min-height:90px ;
+    align-items: center;
+    padding: 0 2em 0 2em;
+    font-size: var(--title);
+    font-family: var(--titleFont)
+}
+
+
 .main-content{
     display: grid;
     justify-items: center;
@@ -10,15 +39,78 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 2rem;
     gap: 2rem;
+    background-color: var(--mainContent);
 
 }
+
+
 
 .book-card{
-    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
     width: 300px;
+    padding: 2em;
     min-width: 100px;
-    border: 2px solid yellow;
+    border-radius: 20px;
+    background-color: var(--cardColor);
+    font-family: var(--cardFont);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform .2s;
 }
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    justify-content: space-between;
+}
+
+.book-card button{
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer; 
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tick:hover{
+    transform:scale(1.1) ;
+    background-color: rgba(3, 119, 18, 0.651)
+}
+.cross:hover{
+    transform:scale(1.1) ;
+    background-color:rgba(153, 0, 0, 0.651);
+}
+
+.trash:hover{
+    transform:scale(1.1) ;
+    background-color: grey;
+}
+
+
+.yes:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(3, 119, 18, 0.651) 0px 5px 15px;
+}
+
+.no:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(153, 0, 0, 0.651) 0px 5px 15px;
+}
+
+.reading:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(179, 152, 0, 0.651) 0px 5px 15px;
+}
+
 
 .add-book{
     display: none;

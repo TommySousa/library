@@ -1,4 +1,4 @@
-let myLibrary = [new Book ('The hobbit', 'J.R.R Tolkien', '269', 'Read'), new Book ('The hobbit', 'J.R.R Tolkien', '269', 'Read'),new Book ('It', 'Stephen King', '269', 'Read') ];
+let myLibrary = [new Book ('The hobbit', 'J.R.R Tolkien', '269', 'Yes'), new Book ('The hobbit', 'J.R.R Tolkien', '269', 'No'),new Book ('It', 'Stephen King', '269', 'Currently Reading') ];
 
 function Book (title, author, pages, read) {
     this.title = title
@@ -19,14 +19,26 @@ const showBooks = (library) => {
     mainContent.innerHTML =''
     library.forEach(book => {
         let element = document.createElement('div');
-        element.classList.add('book-card');
+        if (book.read === 'Yes'){
+            element.classList.add('book-card', 'yes');
+        } else if(book.read === 'No'){
+            element.classList.add('book-card', 'no');
+        } else if(book.read === 'Currently Reading'){
+            element.classList.add('book-card', 'reading');
+        }
         element.innerHTML = `
+                <div class="card-content"> 
                 <p class="title">Title: ${book.title} </p>
                 <p class="author">Author: ${book.author}</p>
-                <p class="pages">Pages Number: ${book.pages} </p>
+                <p class="pages">Pages: ${book.pages} </p>
                 <p class="read">Read: ${book.read} </p>
-                <button> Mark Read </button>
-                <button> Delete </button> `  
+                </div>
+                <div class="card-button">
+                <button class = "tick"> &check; </button>
+                <button class = "cross"> &#10539; </button>
+                <button class = "trash" onclick = "trash()"> <i class="fa fa-trash-o"></i> </button> 
+                </div>
+                `  
     mainContent.appendChild(element)
     });
 };
@@ -39,9 +51,47 @@ form.addEventListener('submit', (e) => {
     let book = new Book (e.target[0].value,e.target[1].value,e.target[2].value,e.target[3].value);
     addBook(book);
     showBooks(myLibrary);
+    markRead();
+    unRead();
+    trash();
     formSection.style.display = '';
 });
 
+const markRead = () => {
+    let clickedButton = document.querySelectorAll('.tick')
+    clickedButton.forEach( button => {
+        button.addEventListener('click', (e) => {
+            let card = e.target.parentElement.parentElement;
+            card.children[0].childNodes[7].innerHTML = "Read: Yes"
+            card.className = '';
+            card.classList.add('book-card', 'yes');
+        }) 
+    })
+};
+
+const unRead = () => {
+    let clickedButton = document.querySelectorAll('.cross')
+    clickedButton.forEach( button => {
+        button.addEventListener('click', (e) => {
+            let card = e.target.parentElement.parentElement;
+            card.children[0].childNodes[7].innerHTML = "Read: No"
+            card.className = '';
+            card.classList.add('book-card', 'no');
+            
+        }) 
+    })
+};
+
+const trash = () => {
+    let mainContent = document.querySelector(".main-content");
+    mainContent = mainContent.childNodes
+    for (let i = 0; i<mainContent.length;i++){
+          mainContent[i].addEventListener('click', () => {
+              myLibrary.splice(i, 1);
+              showBooks(myLibrary);
+          })
+      } 
+};
 
 const displayForm = () => {
     if(formSection.style.display === ''){
@@ -55,3 +105,5 @@ const displayForm = () => {
 
 
 window.onload = (showBooks(myLibrary));
+window.onload = (markRead());
+window.onload = (unRead());
