@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 :root{
     --title: 2rem;
     --header: #F5EBE0;
@@ -41,10 +43,7 @@ li{
     gap: 2rem;
     background-color: var(--mainContent);
     height: 92vh;
-
 }
-
-
 
 .book-card{
     display: flex;
@@ -124,7 +123,77 @@ button{
 
 .add-book{
     display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px; /* Negative half of height. */
+    margin-left: -145px; /* Negative half of width. */
+    height: 600px;
+    width: 290px ;
 }
+
+.book-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    font-family: var(--cardFont);
+    background-color:#ffffff;
+    border-radius: 20px;
+    height: 80%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.book-info{
+    font-weight: 700;
+    font-size: 2em;
+}
+
+
+
+.book-form input{
+        background-color: #DBA39A;
+        border-radius: 12px;
+        border: 0;
+        color: #eee;
+        font-size: 18px;
+        height: 80%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 90%;
+ }
+
+ .book-button{
+    display: flex;
+    text-align: center;
+    gap: 2em;
+ }
+ #submit, #back{
+    background: #DBA39A;
+    outline: 0;
+    color: #eee;
+    text-align: center;
+    border: none;
+    height: 58px;
+    width: 57px;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer; 
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ }
+
+ .btn-book:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+ }
+
+ 
+
+
 
 
 

@@ -54,6 +54,7 @@ form.addEventListener('submit', (e) => {
     addBook(book);
     showBooks(myLibrary);
     formSection.style.display = '';
+    container.style.display = 'block';
 });
 
 const markRead = () => {
@@ -91,12 +92,15 @@ const trash = () => {
           })
       } 
 };
-
+let container = document.querySelector('.container');
 const displayForm = () => {
     if(formSection.style.display === ''){
+        container.style.display = 'none';
         formSection.style.display = 'block'
+
     } else if (formSection.style.display === 'block'){
         formSection.style.display = ''
+        container.style.display = 'block';
     } 
 };
 

@@ -13,7 +13,7 @@
     <title>Library</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <div class="header">
             <div class="title">
                 <p>The Library</p>
@@ -31,6 +31,7 @@
     </div>
     <section class="add-book">
         <form class="book-form" id="form" >
+            <p class="book-info">Book Info</p>
             <label for="title">Insert the book title</label>
             <input type="text" name="title" id="title" required>
             <label for="author">Insert the book's author</label>
@@ -44,8 +45,8 @@
                 <option value="Currently Reading">Currently Reading</option>
             </select>
             <div class="book-button">
-                <input  type="submit" id="add" value= "Add" form="form">
-                <button id="back" form="" onclick="displayForm()">Go back</button>
+                <input  class = "btn-book" type="submit" id="submit" value= "Add" form="form">
+                <button  class = "btn-book" id="back" form="" onclick="displayForm()">Back</button>
             </div>
         </form>  
       
