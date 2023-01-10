@@ -1,4 +1,4 @@
-let myLibrary = [new Book ('The hobbit', 'J.R.R Tolkien', '269', 'Yes'), new Book ('The hobbit', 'J.R.R Tolkien', '269', 'No'),new Book ('It', 'Stephen King', '269', 'Currently Reading') ];
+let myLibrary = [new Book ('The hobbit', 'J.R.R Tolkien', '269', 'Yes'), new Book ('Kafka by the shore', 'Murakami Haruki', '600', 'No'),new Book ('It', 'Stephen King', '200', 'Currently Reading') ];
 
 function Book (title, author, pages, read) {
     this.title = title
