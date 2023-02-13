@@ -1,2 +1,2 @@
 # library
-A mini library project just to practice some JavaScript.
+A mini library project to practice some basic JavaScript Concepts. 
